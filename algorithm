@@ -1,0 +1,14 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+double p=(sqrt((double)5)+1)/double(2);
+int main (){
+    int a,b,c;
+    while(scanf("%d%d",&a,&b)!=EOF){
+        c=abs(a-b);
+        a=a>b?b:a;
+        if(a==(int)(p*c)) cout<<0<<endl;
+        else cout<<1<<endl;
+    }
+    return 0;
+}
