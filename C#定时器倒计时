@@ -1,3 +1,6 @@
+private int totalHours = 0;
+private int totalMinutes = 5;
+private int totalSeconds =0;
 private void button1_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
