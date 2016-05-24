@@ -1,0 +1,30 @@
+private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+protected void timer1_Tick(object sender, EventArgs e)
+        {
+            label3.Text = totalHours+":"+totalMinutes+":" + totalSeconds;
+            if (totalHours == totalMinutes &&totalMinutes== totalSeconds&&totalMinutes==0)
+            {
+                timer1.Enabled = false;
+                textBox2.ReadOnly = true;
+            }
+            else
+            {
+                if (totalSeconds != 0) {
+                    totalSeconds--;
+                }
+                else
+                {
+                    totalSeconds = 59;
+                    totalMinutes--;
+                }
+                if (totalMinutes<0)
+                {
+                    totalMinutes=59;
+                    totalHours--;
+                }
+            }
+        }
