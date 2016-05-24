@@ -1,0 +1,24 @@
+private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            int t = richTextBox1.TextLength;
+            if (t != 0)
+            {
+                if (t > Convert.ToInt32(textBox3.Text))
+                {
+                    MessageBox.Show("输入的字符超出计划数目", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (richTextBox1.Text[t - 1] != textBox1.Text[t - 1])
+                {
+                    richTextBox1.Select(t - 1, 1);
+                    richTextBox1.SelectionColor = Color.Red;
+                    richTextBox1.Select(t, 0);
+                }
+                else
+                {
+                    richTextBox1.Select(t - 1, 1);
+                    richTextBox1.SelectionColor = Color.Green;
+                    richTextBox1.Select(t, 0);
+                }
+            }
+        }
